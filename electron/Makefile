@@ -8,7 +8,7 @@ COMPILER = electron
 PACKAGER = electron-packager
 APPEXEC  = open
 MKDIR    = mkdir -p $(BIN) $(SRC)
-TOUCH    = touch $(addprefix $(SRC),main.js index.html package.json)
+TOUCH    = touch $(addprefix $(SRC),main.js index.html package.json) README.md
 OUTDIR   = --out $(BIN)
 PLATFORM = --platform=$(OS)
 VERSION  = --version=$(shell electron -v | cut -c 2-)
