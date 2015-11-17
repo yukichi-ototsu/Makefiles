@@ -32,7 +32,7 @@ all: clean $(TARGET)
 
 .PHONY : run
 run:
-		$(COMPILER) $(SRS)
+		$(COMPILER) $(SRC)
 
 .PHONY : app-run
 app-run:
