@@ -8,7 +8,8 @@ COMPILER = electron
 PACKAGER = electron-packager
 APPEXEC  = open
 MKDIR    = mkdir -p $(BIN) $(SRC)
-TOUCH    = touch $(addprefix $(SRC),main.js index.html package.json) README.md
+TOUCH    = touch $(addprefix $(SRC),main.js index.html) README.md
+NPM      = cd $(SRC); npm init -y
 OUTDIR   = --out $(BIN)
 PLATFORM = --platform=$(OS)
 VERSION  = --version=$(shell electron -v | cut -c 2-)
@@ -24,6 +25,7 @@ $(TARGET): $(DEPEND)
 init:
 		$(MKDIR)
 		$(TOUCH)
+		$(NPM)
 
 .PHONY : all
 all: clean $(TARGET)
